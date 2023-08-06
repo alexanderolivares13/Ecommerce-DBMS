@@ -13,7 +13,6 @@ router.get("/", async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
-
 });
 
 router.get("/:id", async (req, res) => {
@@ -31,6 +30,11 @@ router.get("/:id", async (req, res) => {
 
 router.post("/", async (req, res) => {
   // create a new category
+  /* The req.body should look like
+  {
+    "category_name": "value"
+  }
+  */
   try {
     const categoryData = await Category.create(req.body);
     res.status(200).json(categoryData);
