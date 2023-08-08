@@ -22,7 +22,11 @@ router.get("/:id", async (req, res) => {
     const productData = await Product.findByPk(req.params.id, {
       include: [Category, Tag],
     });
-    res.status(200).json(productData);
+    if (!productData) {
+      return res.status(404).json({ message: "No product with this id" });
+    } else {
+      res.status(200).json(productData);
+    }
   } catch (err) {
     res.status(500).json(err);
   }
@@ -35,6 +39,7 @@ router.post("/", (req, res) => {
       product_name: "Basketball",
       price: 200.00,
       stock: 3,
+      category_id:
       tagIds: [1, 2, 3, 4]
     }
   */
@@ -63,6 +68,15 @@ router.post("/", (req, res) => {
 // update product
 router.put("/:id", (req, res) => {
   // update product data
+  /*
+  the req.body should be like this for all fields/or only fields that are being updated.
+  {
+      product_name: "Basketball",
+      price: 200.00,
+      stock: 3,
+      category_id:
+      tagIds: [1, 2, 3, 4]
+    } */
   Product.update(req.body, {
     where: {
       id: req.params.id,
@@ -112,9 +126,10 @@ router.delete("/:id", async (req, res) => {
       },
     });
     if (!productData) {
-      res.status(404).json({ message: "No product with this id" });
+      return res.status(404).json({ message: "No product with this id" });
+    } else {
+      res.status(200).json(productData);
     }
-    res.status(200).json(productData);
   } catch (err) {
     res.status(500).json(err);
   }
