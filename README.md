@@ -36,6 +36,9 @@
 ![products-screenshot](./images/products-screenshot.png)
 ![tags-screenshot](./images/tags-screenshot.png)
 
+- The endpoints are `api/categories`, `api/tags`, and `api/products`. When trying to GET, POST, DELETE or put PUT specific values, the `/:id` parameter must be used at the end of the url to specify which category, tag, or product you would like to update.
+- Examples are given in greater detail in the video guide.
+
 ## Credits
 
 - Starter code was obtained from: https://git.bootcampcontent.com/University-of-Minnesota/UofM-VIRT-FSF-PT-04-2023-U-LOLC-ENTG/-/tree/main/13-ORM/02-Challenge
