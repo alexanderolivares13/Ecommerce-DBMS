@@ -27,7 +27,14 @@
 
 ## Usage
 
-- A video tutorial on how to use/test the program is available at: https://drive.google.com/file/d/1Crn72Yy_EP8_NM3EunE0RRPWWdjdeeGe/view
+- A video tutorial on how to use/test the program with Insomnia is available at: https://drive.google.com/file/d/1Crn72Yy_EP8_NM3EunE0RRPWWdjdeeGe/view
+
+- All of the endpoints of the server must be prefixed with `api/<tablename>` e.g. api/categories
+- Use insomnia to test the api endpoints and functionality as shown here:
+
+![categories-screenshot](./images/categories-screenshot.png)
+![products-screenshot](./images/products-screenshot.png)
+![tags-screenshot](./images/tags-screenshot.png)
 
 ## Credits
 
